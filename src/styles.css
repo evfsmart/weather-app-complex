@@ -239,7 +239,7 @@ a {
     }
   
     .icon-small {
-      height: 30px;
+      height: 24px;
       margin-bottom: 6px;
     }
   
@@ -252,5 +252,8 @@ a {
       margin-top: -16px;
     }
   
+    .weather-forecast-temperatures {
+      font-size: 10px;
+    }
   
   }
