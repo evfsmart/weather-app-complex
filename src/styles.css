@@ -243,7 +243,7 @@ ul {
     }
   
     .icon-medium {
-      height: 30px;
+      height: 28px;
     }
   
     .icon-large {
@@ -252,10 +252,12 @@ ul {
     }
   
     .weather-forecast-date {
+      color: black;
       font-size: 12px;
     }
 
     .weather-forecast-temperatures {
-      font-size: 11px;
+      color: black;
+      font-size: 10px;
     }
   }
