@@ -1,30 +1,27 @@
-function formatDate(now) {
-    let hourEl = now.getHours();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+    let hourEl = date.getHours();
     if (hourEl < 10) {
       hourEl = `0${hourEl}`;
     }
-    let minutesEl = now.getMinutes();
+    let minutesEl = date.getMinutes();
     if (minutesEl < 10) {
       minutesEl = `0${minutesEl}`;
     }
-    let dateEl = now.getDate();
-    let dayIndex = now.getDay();
+    let dateEl = date.getDate();
+    let dayIndex = date.getDay();
     let days = [
       "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
     ];
     let dayEl = days[dayIndex];
-    let monthIndex = now.getMonth();
+    let monthIndex = date.getMonth();
     let months = [
       "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December",
     ];
     let monthEl = months[monthIndex];
     return `${dayEl} ${dateEl} ${monthEl}, ${hourEl}:${minutesEl}`;
   }
-  
-  let dateEl = document.querySelector("#lastUpdated");
-  let now = new Date();
-  dateEl.innerHTML = formatDate(now);
-  
+
   // let londonTime = document.querySelector("#london-time");
   // londonTime.innerHTML = `${hour}:${minutes}`;
   
@@ -46,27 +43,27 @@ function formatDate(now) {
   // }
   
   function showLondonTemp(response) {
-    document.querySelector("#london-temp").innerHTML = Math.round(
-      response.data.main.temp
-    );
+    document.querySelector("#london-temp").innerHTML = Math.round(response.data.main.temp);
+    let favesIconLondon = document.querySelector("#favesIconLondon");
+    favesIconLondon.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
   }
   
   function showBelfastTemp(response) {
-    document.querySelector("#belfast-temp").innerHTML = Math.round(
-      response.data.main.temp
-    );
+    document.querySelector("#belfast-temp").innerHTML = Math.round(response.data.main.temp);
+    let favesIconBelfast = document.querySelector("#favesIconBelfast");
+    favesIconBelfast.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
   }
   
   function showWellingtonTemp(response) {
-    document.querySelector("#wellington-temp").innerHTML = Math.round(
-      response.data.main.temp
-    );
+    document.querySelector("#wellington-temp").innerHTML = Math.round(response.data.main.temp);
+    let favesIconWellington = document.querySelector("#favesIconWellington");
+    favesIconWellington.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
   }
   
   function showBeijingTemp(response) {
-    document.querySelector("#beijing-temp").innerHTML = Math.round(
-      response.data.main.temp
-    );
+    document.querySelector("#beijing-temp").innerHTML = Math.round(response.data.main.temp);
+    let favesIconBeijing = document.querySelector("#favesIconBeijing");
+    favesIconBeijing.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
   }
 
   function formatDay (timestamp) {
@@ -86,7 +83,7 @@ function formatDate(now) {
         forecastHTML = forecastHTML + `
         <div class="col-2">
         <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-        <img src="img/${forecastDay.weather[0].icon}.png" alt="" width="42"/>
+        <img src="img/${forecastDay.weather[0].icon}.png" alt="" width="42" class="icon-medium"/>
         <div class="weather-forecast-temperatures">
             <span class="weather-forecast-temperature-max">${Math.round(forecastDay.temp.max)}º</span>
             <span class="weather-forecast-temperature-min">${Math.round(forecastDay.temp.min)}º</span>
@@ -117,6 +114,8 @@ function formatDate(now) {
     let iconElement = document.querySelector("#icon");
     iconElement.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
+    let lastUpdatedElement = document.querySelector("#lastUpdated");
+    lastUpdatedElement.innerHTML = formatDate(response.data.dt * 1000);
 
     getForecast(response.data.coord);
   }
@@ -154,15 +153,18 @@ function formatDate(now) {
   function toFahrenheit(event) {
     event.preventDefault();
     let tempEl = document.querySelector("#current-temp");
-    let temperature = Math.round((tempEl.innerHTML * 9) / 5 + 32);
-    tempEl.innerHTML = temperature;
+    celsiusLink.classList.remove("active");
+    fahrenheitLink.classList.add("active");
+    let fahrenheitTemperature = (celsiusTemperature * 9 / 5) + 32;
+    tempEl.innerHTML = Math.round(fahrenheitTemperature);
   }
-  // if temp conversion breaks due to tempEl.innerHTML being string, add line >temperature = Number(temperature);<
+  
   function toCelsius(event) {
     event.preventDefault();
     let tempEl = document.querySelector("#current-temp");
-    let temperature = 11; //********************************************* fix!/
-    tempEl.innerHTML = temperature;
+    tempEl.innerHTML = celsiusTemperature;
+    celsiusLink.classList.add("active");
+    fahrenheitLink.classList.remove("active");
   }
   
   function londonTemperature(city) {
@@ -184,11 +186,16 @@ function formatDate(now) {
     let weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=beijing&appid=17a639a638a4bfe25417abb69ec4868d&units=metric`;
     axios.get(weatherApiUrl).then(showBeijingTemp);
   }
+
+  let celsiusTemperature = null;
+ 
+  let fahrenheitLink = document.querySelector("#toF");
+  fahrenheitLink.addEventListener("click", toFahrenheit);
   
-  document.querySelector("#toC").addEventListener("click", toCelsius);
-  document.querySelector("#toF").addEventListener("click", toFahrenheit);
+  let celsiusLink = document.querySelector("#toC");
+  celsiusLink.addEventListener("click", toCelsius);
+ 
   
-  // navigator.geolocation.getCurrentPosition(retrieveCurrentPosition);
   
   let searchForm = document.querySelector("#search-form");
   searchForm.addEventListener("submit", updateCity);
@@ -202,7 +209,5 @@ function formatDate(now) {
   wellingtonTemperature("Wellington");
   BeijingTemperature("Beijing");
   
-  // Notes:
-  // Get large icon to change based on description
-  // Get local time
+ 
   
