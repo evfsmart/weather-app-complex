@@ -142,11 +142,7 @@ a {
     height: 120px;
     margin-top: -16px;
   }
-  
-  .label {
-    color: #5e5e5e;
-  }
-  
+   
   .main {
     background-color: #aed1ff;
     margin-top: 12px;
@@ -181,6 +177,10 @@ a {
     text-align: center;
     vertical-align: middle;
   }
+
+  .temperature-img {
+    width: 84px;
+}
   
   .total {
     background-color: #fed19a;
@@ -215,6 +215,21 @@ a {
     top: -30px;
     text-shadow: 1px 1px 2px gray;
     text-decoration: none;
+  }
+
+   
+  .weather-forecast-label {
+    color: #5e5e5e;
+    font-size: 20px;
+  }
+
+  .weather-forecast-temperatures {
+    color: #5e5e5e;
+    font-size: 16px;
+  }
+
+  .weather-forecast-temperature-min {
+    opacity: 0.5;
   }
   
   @media only screen and (max-width: 480px) {
