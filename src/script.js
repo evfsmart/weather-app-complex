@@ -21,7 +21,7 @@ function formatDate(now) {
     return `${dayEl} ${dateEl} ${monthEl}, ${hourEl}:${minutesEl}`;
   }
   
-  let dateEl = document.querySelector("#currentDate");
+  let dateEl = document.querySelector("#lastUpdated");
   let now = new Date();
   dateEl.innerHTML = formatDate(now);
   
