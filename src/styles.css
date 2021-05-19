@@ -1,0 +1,241 @@
+a {
+    color: #5e5e5e;
+  }
+  
+  a:hover {
+    color: white;
+  }
+  
+  body {
+    font-family: "Raleway", sans-serif;
+    font-weight: 300;
+  }
+  
+  h1 {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 1;
+    margin-bottom: 2;
+    margin-top: 16px;
+    text-shadow: 1px 1px 2px gray;
+  }
+  
+  h2 {
+    color: white;
+    font-family: "Raleway", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 0;
+    text-shadow: 1px 1px 1px gray;
+  }
+  
+  li {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #5e5e5e;
+    list-style-type: none;
+  }
+  
+  strong {
+    font-weight: 900;
+  }
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  
+  .btn {
+    background-color: white;
+    border-color: #ced4da;
+  }
+  
+  .card {
+    margin: 0 auto;
+  }
+  .card-body {
+    padding: 12px 12px 12px 12px;
+  }
+  
+  .change-weather-unit {
+    width: 24px;
+  }
+  
+  .current-date {
+    font-weight: bold;
+  }
+  
+  .details {
+    margin-bottom: 0;
+    text-align: right;
+  }
+  
+  .description {
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px gray;
+  }
+  
+  .description:first-letter {
+    text-transform: uppercase;
+  }
+  
+  .favourites {
+    background-color: #d4e6fc;
+  }
+  
+  .faves {
+    color: #5e5e5e;
+    text-align: center;
+  }
+  
+  .faves-time {
+    color: #5e5e5e;
+    font-size: 10px;
+    font-weight: 200;
+    margin: 0;
+  }
+  .faves-temp {
+    color: #5e5e5e;
+    font-size: 10px;
+    margin: 0;
+  }
+  .faves-city {
+    color: #5e5e5e;
+    font-size: 10px;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  .fore-day,
+  .fore-time,
+  .fore-temp {
+    color: #5e5e5e;
+    font-size: 10px;
+    line-height: 1;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .icon-attrib {
+    color: gray;
+    font-size: 8px;
+    margin-bottom: 8px;
+    margin-left: 16px;
+  }
+
+  
+  .icon-small {
+    height: 30px;
+    margin-bottom: 6px;
+  }
+  
+  .icon-medium {
+    height: 50px;
+    display: block;
+    margin: 4px auto;
+  }
+  
+  .icon-large {
+    height: 120px;
+    margin-top: -16px;
+  }
+  
+  .label {
+    color: #5e5e5e;
+  }
+  
+  .main {
+    background-color: #aed1ff;
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  .open-source-attrib {
+      color: black;
+  }
+
+  .recommendations {
+    background-color: #88bcfc;
+  }
+  
+  .recommendations-heading {
+    color: white;
+    font-weight: 900;
+    text-shadow: 1px 1px 2px gray;
+    margin-bottom: 8px;
+  }
+  
+  .spotify-iframe {
+    height: 80px;
+    background-color: #ffe8ce;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px gray;
+  }
+  
+  .spotify-text {
+    color: gray;
+    line-height: 80px;
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .total {
+    background-color: #fed19a;
+    margin-top: 20px;
+    max-width: 500px;
+  }
+  .temp-large {
+    color: white;
+    font-weight: 900;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px gray;
+    margin-bottom: 0;
+    position: relative;
+    top: -10px;
+  }
+  
+  .temp-large-degree {
+    color: white;
+    font-weight: 900;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px gray;
+    margin-bottom: 0;
+    position: relative;
+    top: -10px;
+  }
+  
+  .temp-unit {
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    position: relative;
+    top: -30px;
+    text-shadow: 1px 1px 2px gray;
+    text-decoration: none;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    li {
+      font-size: 14px;
+      color: black;
+    }
+  
+    .icon-small {
+      height: 30px;
+      margin-bottom: 6px;
+    }
+  
+    .icon-medium {
+      height: 34px;
+    }
+  
+    .icon-large {
+      height: 80px;
+      margin-top: -16px;
+    }
+  
+  
+  }
