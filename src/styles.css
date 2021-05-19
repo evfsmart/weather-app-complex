@@ -244,7 +244,7 @@ a {
     }
   
     .icon-medium {
-      height: 34px;
+      height: 30px;
     }
   
     .icon-large {
@@ -253,7 +253,7 @@ a {
     }
   
     .weather-forecast-temperatures {
-      font-size: 10px;
+      font-size: 12px;
     }
   
   }
