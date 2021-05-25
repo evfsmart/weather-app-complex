@@ -203,7 +203,7 @@ function formatDate(timestamp) {
   let currentButton = document.querySelector("#current-submit");
   currentButton.addEventListener("click", getCurrentNavigatorInfo);
   
-  retrieveSearchedPosition("Wellington");
+  retrieveSearchedPosition("London");
   londonTemperature("London");
   belfastTemperature("Belfast");
   wellingtonTemperature("Wellington");
