@@ -22,25 +22,6 @@ function formatDate(timestamp) {
     return `${dayEl} ${dateEl} ${monthEl}, ${hourEl}:${minutesEl}`;
   }
 
-  // let londonTime = document.querySelector("#london-time");
-  // londonTime.innerHTML = `${hour}:${minutes}`;
-  
-  // let belfastTime = document.querySelector("#belfast-time");
-  // belfastTime.innerHTML = `${hour}:${minutes}`;
-  
-  // let wellingtonTime = document.querySelector("#wellington-time");
-  // wellingtonTime.innerHTML = `${hour}:${minutes}`;
-  
-  // let beijingTime = document.querySelector("#beijing-time");
-  // beijingTime.innerHTML = `${hour}:${minutes}`;
-  
-  // function updateCity(event) {
-  //   event.preventDefault();
-  //   let cityEl = document.querySelector("#currentCity");
-  //   let cityInput = document.querySelector("#citySearch");
-  //   cityEl.innerHTML = cityInput.value;
-  //   retrieveSearchedPosition();
-  // }
   
   function showLondonTemp(response) {
     document.querySelector("#london-temp").innerHTML = Math.round(response.data.main.temp);
